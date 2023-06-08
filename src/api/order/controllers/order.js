@@ -15,9 +15,10 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         const item = await strapi.service("api::product.product").findOne(product.id);
 
         return {
+          id: item.id,
           title: lang == "ENG" ? item.title_eng : (lang == "ENG" ? item.title.rus : item.title_tkm),
           price: item.discount_price ? item.discount_price : item.price,
-          qiantity: product.quantity,
+          quantity: product.quantity,
         }
       })
     );
