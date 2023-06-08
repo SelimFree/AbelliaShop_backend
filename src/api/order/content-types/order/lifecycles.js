@@ -66,7 +66,7 @@ const generateHTMLForm = (data) => {
                                                 height: 150px;
                                                 margin-bottom: 7px;
                                             "
-                                            src="http://localhost:1337/uploads/logo_110f74ffa5.png"
+                                            src="https://abelliashopadmin.onrender.com/uploads/logo_5e3134370e.png"
                                         />
                                         <p
                                             class="top-container__greetings"
@@ -103,7 +103,7 @@ const generateHTMLForm = (data) => {
                                                 padding: 0px;
                                                 margin: 0px;
                                             "
-                                            src="http://localhost:1337/uploads/cosmetics_17a68dd469.png"
+                                            src="https://abelliashopadmin.onrender.com/uploads/cosmetics_acd70e2af4.png"
                                         />
                                     </td>
                                 </tr>
