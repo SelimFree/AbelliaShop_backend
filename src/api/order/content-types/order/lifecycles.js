@@ -3,7 +3,7 @@ const generateHTMLForm = (data) => {
   let total = 0;
 
   data?.products?.map((product) => {
-    items += `<span style="margin-bottom: 20px;">${product.title}<br><span style="margin-left: 10px; font-size: 10px; color: #717173;">${product.price} x ${product.quantity}.00 TMT = ${product.price * product.quantity}.00 TMT</span> </span><br>`;
+    items += `<span style="margin-bottom: 20px;">${product.title}<br><span style="margin-left: 10px; font-size: 10px; color: #717173;">${product.quantity} x ${product.price}.00 TMT = ${product.price * product.quantity}.00 TMT</span> </span><br>`;
     total += product.price * product.quantity;
   });
 
