@@ -2,6 +2,9 @@ const generateHTMLForm = (data) => {
   let items = "";
   let total = 0;
 
+  const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'};
+  const date = new Date(data.createdAt).toLocaleDateString('ru-RU', options);
+
   data?.products?.map((product) => {
     items += `<span style="margin-bottom: 20px;">${product.title}<br><span style="margin-left: 10px; font-size: 10px; color: #717173;">${product.quantity} x ${product.price}.00 TMT = ${product.price * product.quantity}.00 TMT</span> </span><br>`;
     total += product.price * product.quantity;
@@ -159,7 +162,7 @@ const generateHTMLForm = (data) => {
                                                                 font-weight: 400;
                                                             "
                                                         >
-                                                            Дата заказа: ${data.createdAt} <br />
+                                                            Дата заказа: ${date} <br />
                                                         </p>
                                                         <p
                                                             class="receipt__info-text-date-ref"
