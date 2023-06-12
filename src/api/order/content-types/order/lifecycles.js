@@ -291,14 +291,14 @@ const generateHTMLForm = (data) => {
 `;
 };
 
-module.exports = {
+module.exports = ({ env }) => ({
   async afterCreate(event) {
     const { result } = event;
     try {
       await strapi.plugins["email"].services.email.send({
-        from: "dev3.aksahypa@gmail.com",
+        from: env('SMTP_USERNAME'),
         to: result.email,
-        cc: ["selim.altayev@gmail.com"],
+        cc: [env('SMTP_CC_USERNAME')],
         subject: `Номер вашего заказа: ${result.id}`,
         html: generateHTMLForm(result),
       });
@@ -306,4 +306,4 @@ module.exports = {
       console.log(err);
     }
   },
-};
+});
